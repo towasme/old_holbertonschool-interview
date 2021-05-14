@@ -13,7 +13,6 @@ def minOperations(n):
     minimum of operations
     """
 
-
     numOper = 0
     divN = n
     numTimes = 2
