@@ -12,24 +12,17 @@ def rain(walls):
     walls is a list of non-negative integers. Return: Integer indicating total amount of rainwater retained.
     """
 
-    previous_wall = 0
-    spaces = []
-    retained = 0
-    mayor = 0
+    water = 0
+    length = len(walls)
 
-    for idx, wall in enumerate(walls):
+    for i in range(1, length - 1):
+        right = walls[i]
+        for j in range(i + 1, length):
+            right = max(right, walls[j])
 
-        if wall != 0 and previous_wall != 0:
+        left = walls[i]
+        for j in range(i):
+            left = max(left, walls[j])
 
-            if wall >= previous_wall:
-                retained += (previous_wall * len(spaces)) - sum(spaces)
-                spaces = []
-                previous_wall = wall
-
-        if wall != 0 and previous_wall == 0:
-            previous_wall = wall
-
-        if wall == 0 and previous_wall != 0:
-            spaces.append(wall)
-
-    return retained if retained != 0 else 1
+        water = water + (min(left, right) - walls[i])
+    return water
