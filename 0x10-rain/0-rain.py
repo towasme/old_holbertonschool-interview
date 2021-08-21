@@ -9,8 +9,7 @@ def rain(walls):
     """
     Given a list of non-negative integers representing walls of width 1,
     calculate how much water will be retained after it rains.
-    walls is a list of non-negative integers.
-    Return: Integer indicating total amount of rainwater retained.
+    walls is a list of non-negative integers. Return: Integer indicating total amount of rainwater retained.
     """
 
     previous_wall = 0
