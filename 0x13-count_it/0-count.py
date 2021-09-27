@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""keywords titles of all hot articles """
+"""keywords titles of all hot articles  """
 import requests
 import sys
 
